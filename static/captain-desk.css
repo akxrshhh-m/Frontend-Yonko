@@ -1,0 +1,333 @@
+/* ============================================================
+   🚨 1. YOUR BACKGROUND IMAGE (CHANGE URL HERE) 🚨
+   ============================================================ */
+.gt-captain-overlay {
+    /* Put your direct image link inside the quotes below */
+background-image: url("static/bg.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* ============================================================
+   GRAN TESORO — CAPTAIN'S DESK (ONE PIECE STYLE)
+   ============================================================ */
+
+/* MAIN OVERLAY */
+.gt-captain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    display: none; /* Change to flex via JS when open */
+    align-items: flex-start;
+    justify-content: center;
+    padding: 45px 35px;
+    overflow-y: auto;
+    background-color: #0a0e14; /* Fallback color */
+}
+
+.gt-captain-overlay.open {
+    display: flex;
+}
+
+/* MAIN CAPTAIN'S DESK PANEL */
+.gt-captain-panel {
+    width: min(1180px, 100%);
+    margin: 20px auto;
+    
+    border: 1px solid rgba(224, 179, 74, 0.4);
+    border-radius: 12px;
+    
+    /* Dark, sleek background mimicking your screenshot */
+    background-color: rgba(12, 14, 18, 0.95) !important;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9), 0 0 40px rgba(224, 179, 74, 0.05);
+    overflow: hidden;
+}
+
+/* ============================================================
+   TYPOGRAPHY & HEADERS (Fixed Fonts)
+   ============================================================ */
+
+.gt-captain-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 40px;
+    border-bottom: 1px solid rgba(224, 179, 74, 0.15);
+}
+
+.gt-captain-header .eyebrow {
+    margin: 0 0 5px;
+    color: #d8b85f;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.gt-captain-header h2 {
+    margin: 0;
+    /* Forced elegant serif font to match screenshot */
+    font-family: "Playfair Display", "Times New Roman", Georgia, serif !important;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    line-height: 1.1;
+    color: #f3d98b;
+}
+
+.gt-captain-header .sub {
+    margin: 10px 0 0;
+    color: #a39a88;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ============================================================
+   CLOSE BUTTON (Top Right)
+   ============================================================ */
+
+.gt-captain-close {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(224, 179, 74, 0.3);
+    border-radius: 50%;
+    background: transparent;
+    color: #f3d98b;
+    font-family: system-ui, sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.gt-captain-close:hover {
+    background: rgba(224, 179, 74, 0.1);
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   BODY & CARDS (Removed Unwanted Boxiness)
+   ============================================================ */
+
+.gt-captain-body {
+    display: grid;
+    gap: 30px;
+    padding: 30px 40px 40px;
+}
+
+.gt-captain-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 30px;
+    border: 1px solid rgba(224, 179, 74, 0.15);
+    border-radius: 12px;
+    /* Extremely subtle background so it doesn't look like an ugly box */
+    background: rgba(255, 255, 255, 0.02); 
+}
+
+/* CARD HEADERS */
+.gt-captain-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(224, 179, 74, 0.15);
+}
+
+.gt-captain-card-head h3 {
+    margin: 3px 0 0;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+}
+
+.gt-captain-kicker {
+    display: block;
+    margin-bottom: 5px;
+    color: #d8b85f;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   CREATE FORM & INPUTS (Restored your exact 5-column layout)
+   ============================================================ */
+
+.gt-create-form {
+    display: grid;
+    gap: 20px;
+}
+
+/* Restored exactly how you had it so it matches the image perfectly */
+.gt-form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1.4fr 0.8fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.gt-create-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #c0b296;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Form Inputs matches the screenshot exactly (dark fill, subtle outline) */
+.gt-create-form input,
+.gt-create-form select,
+.gt-create-form textarea,
+.gt-capacity-edit input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid rgba(224, 179, 74, 0.2);
+    border-radius: 6px;
+    background: #0d0f12; /* Dark solid color, no transparency */
+    color: #f4ead6;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-size: 0.9rem;
+    outline: none;
+    color-scheme: dark; /* Fixes calendar icon color */
+    transition: border-color 0.2s ease;
+}
+
+.gt-create-form input:focus,
+.gt-create-form select:focus,
+.gt-create-form textarea:focus {
+    border-color: rgba(224, 179, 74, 0.7);
+}
+
+.gt-create-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ============================================================
+   CHART EVENT BUTTON (Gold Pill Design)
+   ============================================================ */
+
+.gt-create-form > .btn {
+    width: auto !important;
+    justify-self: start;
+    align-self: center;
+    margin-top: 5px;
+    padding: 12px 30px;
+    
+    /* Exact gold gradient from image */
+    background: linear-gradient(to bottom, #fde49f, #d29e3a);
+    border: none;
+    border-radius: 999px;
+    
+    color: #000 !important; /* Black text */
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(224, 179, 74, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.gt-create-form > .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(224, 179, 74, 0.35);
+}
+
+/* ============================================================
+   EVENT MANIFEST / REFRESH BUTTON
+   ============================================================ */
+
+.gt-captain-small-btn {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    border: 1px solid rgba(224, 179, 74, 0.3);
+    border-radius: 999px;
+    background: transparent;
+    color: #e9cf88;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.gt-captain-small-btn:hover {
+    background: rgba(224, 179, 74, 0.1);
+}
+
+/* ============================================================
+   EMPTY / LOADING STATES
+   ============================================================ */
+
+.gt-captain-empty,
+.gt-captain-loading {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 22px;
+    border: none;
+    background: #0d0f12; /* Matches input backgrounds */
+    border-radius: 8px;
+    color: #8e846f;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT (Mobile fix)
+   ============================================================ */
+
+@media (max-width: 1050px) {
+    .gt-form-grid {
+        /* Breaks perfectly into 3 columns on medium screens */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 700px) {
+    .gt-captain-overlay {
+        padding: 12px;
+    }
+    .gt-captain-panel {
+        margin: 0;
+        border-radius: 10px;
+    }
+    .gt-captain-header {
+        padding: 20px;
+    }
+    .gt-captain-body {
+        padding: 20px;
+    }
+    .gt-captain-card {
+        padding: 20px;
+    }
+    .gt-form-grid {
+        /* Single column on mobile */
+        grid-template-columns: 1fr; 
+    }
+    .gt-create-form > .btn {
+        width: 100% !important;
+        justify-self: stretch;
+    }
+}

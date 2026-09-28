@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Gran Tesoro — Golden Gala &amp; Reverie Council RSVP</title>
+<meta name="description" content="Issue golden invitations to Gild Tesoro's gala and the sacred council at Mary Geoise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Pirata+One&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23e0b34a'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%231a0a0c'%3E%E0%B8%BF%3C/text%3E%3C/svg%3E">
+
+<style>
+/* ============================================================
+   0. TOKENS
+   ============================================================ */
+:root{
+  --gold-1:#e0b34a;
+  --gold-2:#f3d98b;
+  --gold-3:#fff4d2;
+  --gold-deep:#a5762a;
+  --gold-ink:#5b3c0c;
+
+  --lacquer:#1a0a0c;
+  --lacquer-2:#241013;
+  --teal:#0f1a24;
+  --teal-2:#142433;
+  --ivory:#f4ead6;
+  --parch:#e8dabd;
+
+  --marble:#f8f5ef;
+  --marble-2:#ece6da;
+  --marijoa-ink:#2a2418;
+
+  --danger:#c3453f;
+  --danger-soft:#ff7b72;
+  --ok:#4ea87a;
+
+  --radius:16px;
+  --radius-s:10px;
+  --shadow-deep:0 24px 60px -24px rgba(0,0,0,.85);
+  --ring:0 0 0 2px var(--lacquer), 0 0 0 4px var(--gold-2);
+
+  --f-display:'Cinzel Decorative', Georgia, serif;
+  --f-pirate:'Pirata One', 'Cinzel Decorative', serif;
+  --f-serif:'Cormorant Garamond', Georgia, serif;
+  --f-sans:'Inter', system-ui, -apple-system, sans-serif;
+
+  --page-x:clamp(14px, 4vw, 44px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100%;
+  font-family:var(--f-sans);
+  color:var(--ivory);
+  background:#0b0608;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+
+:focus-visible{outline:none; box-shadow:var(--ring); border-radius:6px}
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:999;
+  background:var(--gold-1); color:var(--lacquer); padding:12px 18px;
+  font-weight:700; border-radius:0 0 10px 0;
+}
+.skip:focus{left:0}
+
+::selection{background:var(--gold-1); color:var(--lacquer)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:#0d0709}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold-deep),var(--gold-1));border-radius:9px;border:2px solid #0d0709}
+
+/* ============================================================
+   1. GOLD DUST LAYER
+   ============================================================ */
+#dust{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.72}
+
+/* ============================================================
+   2. SHARED ATOMS
+   ============================================================ */
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--page-x)}
+
+.goldtext{
+  background:linear-gradient(100deg,var(--gold-deep) 0%,var(--gold-2) 22%,var(--gold-3) 38%,var(--gold-1) 56%,var(--gold-deep) 78%,var(--gold-2) 100%);
+  background-size:280% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+  animation:leaf 9s linear infinite;
+}
+@keyframes leaf{to{background-position:280% 0}}
+
+.eyebrow{
+  font-family:var(--f-sans); font-size:.68rem; letter-spacing:.34em;
+  text-transform:uppercase; color:var(--gold-1); font-weight:700;
+  display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{content:'';width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-1))}
+
+.h-sec{
+  font-family:var(--f-display); font-weight:900;
+  font-size:clamp(1.5rem,3.4vw,2.35rem); margin:.28em 0 .1em; line-height:1.12;
+}
+.sub{font-family:var(--f-serif); font-size:1.03rem; color:#cbb894; font-style:italic; margin:0}
+
+.btn{
+  --bg:linear-gradient(180deg,var(--gold-2),var(--gold-1) 52%,var(--gold-deep));
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:12px 22px; border:1px solid rgba(255,235,190,.55); border-radius:999px;
+  background:var(--bg); color:#2b1a05; font-weight:700; font-size:.87rem;
+  letter-spacing:.05em; text-transform:uppercase; cursor:pointer;
+  box-shadow:0 10px 26px -12px rgba(224,179,74,.75), inset 0 1px 0 rgba(255,255,255,.55);
+  transition:transform .16s, box-shadow .16s, filter .16s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(224,179,74,.9), inset 0 1px 0 rgba(255,255,255,.6)}
+.btn:active{transform:translateY(0)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.btn.ghost{
+  background:rgba(224,179,74,.07); color:var(--gold-2);
+  border:1px solid rgba(224,179,74,.42); box-shadow:none;
+}
+.btn.ghost:hover{background:rgba(224,179,74,.15)}
+.btn.danger{
+  background:linear-gradient(180deg,#e0605a,var(--danger));
+  color:#fff2f1;border-color:rgba(255,160,155,.5);
+  box-shadow:0 10px 26px -14px rgba(195,69,63,.9);
+}
+.btn.sm{padding:8px 15px;font-size:.73rem}
+.btn.block{width:100%}
+
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 11px;border-radius:999px;font-size:.66rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid rgba(224,179,74,.4);background:rgba(224,179,74,.1);color:var(--gold-2);
+}
+.chip.open{border-color:rgba(78,168,122,.5);background:rgba(78,168,122,.12);color:#8fe0b6}
+.chip.full{border-color:rgba(195,69,63,.5);background:rgba(195,69,63,.14);color:var(--danger-soft)}
+.chip.closed{border-color:rgba(160,160,160,.35);background:rgba(255,255,255,.05);color:#b9b2a4}
+
+/* Tier badges */
+.tier{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:5px;
+  font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.t-yonko{background:linear-gradient(180deg,#8b1d1d,#5e0f0f);color:#ffd9a8;border:1px solid #c0653c}
+.t-warlord{background:linear-gradient(180deg,#3a2a6b,#221647);color:#d5c7ff;border:1px solid #7b63c9}
+.t-captain{background:linear-gradient(180deg,#0f5560,#083039);color:#a8ecf5;border:1px solid #2e9fb0}
+.t-crew{background:linear-gradient(180deg,#3d3527,#241f16);color:#e2d3ae;border:1px solid #7c6b45}
+.t-noble{background:linear-gradient(180deg,var(--gold-2),var(--gold-1));color:#3a2705;border:1px solid #fff1cd}
+
+.card{
+  background:linear-gradient(170deg,rgba(36,16,19,.94),rgba(15,26,36,.94));
+  border:1px solid rgba(224,179,74,.22);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-deep);
+}
+
+label{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold-1);font-weight:700;margin-bottom:7px}
+.field{
+  width:100%;padding:11px 14px;border-radius:var(--radius-s);
+  background:rgba(8,5,6,.75);border:1px solid rgba(224,179,74,.25);
+  color:var(--ivory);font-size:.92rem;transition:border-color .16s, background .16s;
+}
+.field::placeholder{color:#6f6659}
+.field:focus{border-color:var(--gold-1);background:rgba(8,5,6,.95);outline:none;box-shadow:var(--ring)}
+select.field{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold-1) 50%),linear-gradient(135deg,var(--gold-1) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 50%, calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============================================================
+   3. TOP BAR
+   ============================================================ */
+header.bar{
+  position:sticky;top:0;z-index:60;
+  background:linear-gradient(180deg,rgba(11,5,7,.96),rgba(11,5,7,.72));
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(224,179,74,.25);
+}
+.bar-in{display:flex;align-items:center;gap:16px;padding:11px var(--page-x);max-width:1240px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:1;min-width:0}
+.brand-txt{min-width:0}
+.brand-txt b{font-family:var(--f-display);font-size:.95rem;display:block;line-height:1.1;letter-spacing:.02em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-txt span{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:#9d8f77}
+.bar-acts{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:38px;height:38px;display:grid;place-items:center;border-radius:11px;cursor:pointer;
+  background:rgba(224,179,74,.08);border:1px solid rgba(224,179,74,.3);color:var(--gold-2);
+  transition:background .16s,transform .16s;
+}
+.icon-btn:hover{background:rgba(224,179,74,.2);transform:translateY(-1px)}
+.icon-btn[aria-pressed="true"]{background:var(--gold-1);color:var(--lacquer);border-color:var(--gold-2)}
+@media(max-width:520px){.brand-txt span{display:none}}
+
+/* ============================================================
+   4. HERO
+   ============================================================ */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(40px,7vw,86px) 0 0}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,4vw,52px);align-items:center;
+}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr}}
+
+.hero h1{
+  font-family:var(--f-display);font-weight:900;line-height:.98;margin:.16em 0 .18em;
+  font-size:clamp(2.35rem,6.6vw,4.5rem);letter-spacing:-.01em;
+  text-shadow:0 2px 0 rgba(0,0,0,.5);
+}
+.hero h1 .l2{display:block;font-family:var(--f-pirate);font-weight:400;
+  font-size:.62em;letter-spacing:.03em;color:var(--gold-2);-webkit-text-fill-color:currentColor}
+.tagline{
+  font-family:var(--f-serif);font-style:italic;font-size:clamp(1.02rem,2.1vw,1.32rem);
+  color:#d9c8a6;max-width:46ch;margin:0 0 26px;line-height:1.55;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Ship art */
+.ship-stage{position:relative;aspect-ratio:1/.9;min-height:280px}
+.ship-stage svg{position:absolute;inset:0;width:100%;height:100%}
+.wave{animation:drift 13s ease-in-out infinite}
+.wave.b{animation-duration:17s;animation-direction:reverse}
+.wave.c{animation-duration:21s}
+@keyframes drift{0%,100%{transform:translateX(-14px)}50%{transform:translateX(14px)}}
+.bob{animation:bob 7s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-.7deg)}50%{transform:translateY(-11px) rotate(.7deg)}}
+.twinkle{animation:tw 3.4s ease-in-out infinite}
+.twinkle:nth-of-type(2n){animation-delay:1.1s}
+.twinkle:nth-of-type(3n){animation-delay:2.2s}
+@keyframes tw{0%,100%{opacity:.25}50%{opacity:1}}
+
+/* Bounty stat strip */
+.bounty-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:clamp(34px,5vw,60px) 0 0;
+  background:rgba(224,179,74,.22);border:1px solid rgba(224,179,74,.28);
+  border-radius:var(--radius);overflow:hidden;
+}
+@media(max-width:700px){.bounty-strip{grid-template-columns:1fr 1fr}}
+.bstat{background:linear-gradient(180deg,rgba(26,10,12,.96),rgba(15,26,36,.96));padding:18px 14px;text-align:center}
+.bstat .n{font-family:var(--f-display);font-weight:900;font-size:clamp(1.3rem,3.2vw,2rem);line-height:1}
+.bstat .k{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#9d8f77;margin-top:7px}
+
+/* ============================================================
+   5. SECTIONS
+   ============================================================ */
+section{position:relative;z-index:2;padding:clamp(44px,6vw,80px) 0}
+.sec-head{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:30px}
+
+/* Marijoa (council) light panel */
+.marijoa{
+  background:
+    radial-gradient(700px 320px at 80% 0%, rgba(224,179,74,.22), transparent 62%),
+    linear-gradient(170deg,var(--marble),var(--marble-2));
+  color:var(--marijoa-ink);
+  border-top:2px solid var(--gold-1);border-bottom:2px solid var(--gold-1);
+}
+.marijoa .h-sec{color:#40341c}
+.marijoa .sub{color:#6d6048}
+.marijoa .eyebrow{color:var(--gold-deep)}
+.marijoa .eyebrow::before{background:linear-gradient(90deg,transparent,var(--gold-deep))}
+.marijoa .card{
+  background:linear-gradient(170deg,#fffdf8,#f2ece0);
+  border:1px solid rgba(165,118,42,.34);color:var(--marijoa-ink);
+  box-shadow:0 18px 44px -26px rgba(90,70,30,.6);
+}
+.marijoa label{color:var(--gold-deep)}
+.marijoa .field{background:#fffdf7;border-color:rgba(165,118,42,.34);color:var(--marijoa-ink)}
+.marijoa .field::placeholder{color:#a79b83}
+
+/* ============================================================
+   6. EVENT TICKET CARDS
+   ============================================================ */
+.deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+
+.ticket{
+  position:relative;padding:0;overflow:hidden;cursor:pointer;
+  background:linear-gradient(168deg,#2b1216 0%, #1c0e13 46%, #10202b 100%);
+  border:1px solid rgba(224,179,74,.3);border-radius:var(--radius);
+  box-shadow:var(--shadow-deep);
+  transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s, border-color .22s;
+  -webkit-mask:
+    radial-gradient(11px at 0 62%, #0000 98%, #000) left/51% 100% no-repeat,
+    radial-gradient(11px at 100% 62%, #0000 98%, #000) right/51% 100% no-repeat;
+          mask:
+    radial-gradient(11px at 0 62%, #0000 98%, #000) left/51% 100% no-repeat,
+    radial-gradient(11px at 100% 62%, #0000 98%, #000) right/51% 100% no-repeat;
+}
+.ticket:hover,.ticket:focus-within{
+  transform:translateY(-6px) rotate(-.35deg);
+  border-color:var(--gold-1);
+  box-shadow:0 30px 64px -26px rgba(224,179,74,.5), var(--shadow-deep);
+}
+.ticket.council{background:linear-gradient(168deg,#fffdf8 0%,#f4efe3 60%,#e9e1cf 100%);color:var(--marijoa-ink);border-color:rgba(165,118,42,.4)}
+.ticket.council .t-meta,.ticket.council .t-venue{color:#7a6c53}
+.ticket.council .t-name{color:#3a2f19}
+
+.t-top{padding:18px 20px 14px;position:relative}
+.t-flag{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}
+.t-name{font-family:var(--f-display);font-weight:900;font-size:1.14rem;line-height:1.22;margin:0 0 5px}
+.t-venue{font-family:var(--f-serif);font-style:italic;font-size:.92rem;color:#bda986;margin:0}
+.t-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:.72rem;color:#9d8f77;margin-top:11px}
+
+.perf{
+  height:1px;margin:0 14px;
+  background:repeating-linear-gradient(90deg,rgba(224,179,74,.55) 0 7px,transparent 7px 14px);
+}
+.ticket.council .perf{background:repeating-linear-gradient(90deg,rgba(165,118,42,.55) 0 7px,transparent 7px 14px)}
+
+.t-bot{padding:15px 20px 19px;display:flex;flex-direction:column;gap:13px}
+
+/* coin stack */
+.coins{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.coin{width:16px;height:16px;border-radius:50%;flex:0 0 auto;
+  background:radial-gradient(circle at 34% 30%, var(--gold-3), var(--gold-1) 52%, var(--gold-deep));
+  border:1px solid #fff1cd;box-shadow:0 2px 5px -1px rgba(0,0,0,.6)}
+.coin.empty{background:rgba(255,255,255,.05);border:1px dashed rgba(224,179,74,.4);box-shadow:none}
+.ticket.council .coin.empty{background:rgba(0,0,0,.04);border-color:rgba(165,118,42,.4)}
+
+/* gold bar */
+.bar-track{height:11px;border-radius:999px;background:rgba(0,0,0,.42);
+  border:1px solid rgba(224,179,74,.32);overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:999px;
+  background:linear-gradient(90deg,var(--gold-deep),var(--gold-1) 45%,var(--gold-3) 70%,var(--gold-1));
+  background-size:200% 100%;animation:shine 2.8s linear infinite;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes shine{to{background-position:200% 0}}
+
+.t-nums{display:flex;justify-content:space-between;font-size:.72rem;color:#b7a684;font-weight:600}
+.ticket.council .t-nums{color:#7a6c53}
+
+/* gold seal */
+.seal{position:absolute;top:12px;right:14px;width:46px;height:46px;opacity:.95;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
+.stamp{
+  position:absolute;right:-6px;bottom:52px;transform:rotate(-13deg);
+  font-family:var(--f-pirate);font-size:.74rem;letter-spacing:.14em;
+  color:rgba(195,69,63,.85);border:2px solid rgba(195,69,63,.7);
+  padding:3px 9px;border-radius:4px;pointer-events:none;
+  text-transform:uppercase;
+}
+.stamp.gold{color:rgba(224,179,74,.9);border-color:rgba(224,179,74,.75)}
+
+/* ============================================================
+   7. DETAIL PANEL
+   ============================================================ */
+.panel{margin-top:26px;padding:clamp(18px,3vw,30px)}
+.panel-head{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-start;
+  padding-bottom:18px;border-bottom:1px solid rgba(224,179,74,.22);margin-bottom:22px}
+.panel-cols{display:grid;grid-template-columns:1.25fr .9fr;gap:24px}
+@media(max-width:900px){.panel-cols{grid-template-columns:1fr}}
+
+.roster{display:flex;flex-direction:column;gap:9px}
+.guest{
+  display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:12px;
+  background:rgba(255,255,255,.035);border:1px solid rgba(224,179,74,.17);
+  transition:background .16s,border-color .16s,transform .16s;
+}
+.guest:hover{background:rgba(224,179,74,.08);border-color:rgba(224,179,74,.36);transform:translateX(3px)}
+.g-av{width:38px;height:38px;flex:0 0 auto;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--f-display);font-weight:900;font-size:.82rem;color:#2b1a05;
+  background:radial-gradient(circle at 32% 28%,var(--gold-3),var(--gold-1) 55%,var(--gold-deep));
+  border:1px solid #fff1cd}
+.g-main{flex:1;min-width:0}
+.g-name{font-weight:700;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-sub{font-size:.7rem;color:#9d8f77;display:flex;gap:8px;flex-wrap:wrap;margin-top:3px;align-items:center}
+.g-act{display:flex;gap:6px;flex:0 0 auto}
+
+/* Log Pose queue */
+.pose{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:12px;
+  background:rgba(15,26,36,.5);border:1px solid rgba(224,179,74,.17)}
+.pose:hover{border-color:rgba(224,179,74,.36)}
+.pose-dial{width:44px;height:44px;flex:0 0 auto}
+
+.empty{
+  text-align:center;padding:38px 18px;border-radius:14px;
+  border:1px dashed rgba(224,179,74,.32);background:rgba(224,179,74,.04);
+}
+.empty p{font-family:var(--f-serif);font-style:italic;font-size:1.02rem;color:#b7a684;margin:12px 0 0}
+
+/* ============================================================
+   8. DEN DEN MUSHI OFFER
+   ============================================================ */
+.offer{
+  position:relative;overflow:hidden;margin-bottom:22px;padding:18px 20px;border-radius:var(--radius);
+  background:linear-gradient(140deg,rgba(21,58,44,.95),rgba(13,32,26,.95));
+  border:1px solid rgba(78,168,122,.55);
+  box-shadow:0 0 0 1px rgba(78,168,122,.14), 0 24px 50px -28px rgba(78,168,122,.6);
+  animation:ringpulse 1.5s ease-in-out infinite;
+}
+@keyframes ringpulse{0%,100%{box-shadow:0 0 0 1px rgba(78,168,122,.14),0 24px 50px -28px rgba(78,168,122,.5)}
+  50%{box-shadow:0 0 0 1px rgba(78,168,122,.4),0 24px 66px -22px rgba(78,168,122,.95)}}
+.offer-in{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.offer-l{display:flex;align-items:center;gap:15px;min-width:0}
+.snail{width:62px;height:62px;flex:0 0 auto;animation:wobble 1s ease-in-out infinite}
+@keyframes wobble{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(8deg) scale(1.07)}}
+.offer h3{font-family:var(--f-pirate);font-size:1.32rem;margin:0 0 3px;color:#b6f0cf;letter-spacing:.02em}
+.offer p{margin:0;font-size:.84rem;color:#8fbfa6}
+.ticker{font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:#e6fff2;
+  font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.ticker.warn{color:var(--danger-soft);animation:blink .55s steps(2) infinite}
+@keyframes blink{50%{opacity:.35}}
+
+/* ============================================================
+   9. TOASTS (Den Mushi transmissions)
+   ============================================================ */
+#toasts{position:fixed;right:14px;bottom:14px;z-index:300;display:flex;flex-direction:column;gap:11px;
+  width:min(360px,calc(100vw - 28px));pointer-events:none}
+.toast{
+  pointer-events:auto;display:flex;gap:12px;align-items:flex-start;padding:13px 15px;border-radius:13px;
+  background:linear-gradient(150deg,rgba(32,16,19,.98),rgba(12,22,30,.98));
+  border:1px solid rgba(224,179,74,.45);box-shadow:var(--shadow-deep);
+  animation:tin .32s cubic-bezier(.2,.9,.3,1.2);
+}
+@keyframes tin{from{opacity:0;transform:translateX(30px) scale(.94)}to{opacity:1;transform:none}}
+.toast.out{animation:tout .26s forwards}
+@keyframes tout{to{opacity:0;transform:translateX(30px) scale(.94)}}
+.toast.err{border-color:rgba(195,69,63,.7)}
+.toast.ok{border-color:rgba(78,168,122,.6)}
+.toast-ic{width:30px;height:30px;flex:0 0 auto}
+.toast b{display:block;font-family:var(--f-pirate);font-size:1rem;letter-spacing:.03em;color:var(--gold-2);margin-bottom:2px}
+.toast.err b{color:var(--danger-soft)}
+.toast.ok b{color:#8fe0b6}
+.toast span{font-size:.82rem;color:#c5b697;line-height:1.45}
+
+/* ============================================================
+   10. MODALS
+   ============================================================ */
+.veil{
+  position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:18px;
+  background:rgba(4,2,3,.82);backdrop-filter:blur(7px);
+}
+.veil.on{display:grid;animation:fade .2s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal{
+  width:min(560px,100%);max-height:88vh;overflow:auto;padding:26px;
+  animation:pop .3s cubic-bezier(.2,.9,.3,1.3);
+}
+@keyframes pop{from{opacity:0;transform:translateY(22px) scale(.95)}to{opacity:1;transform:none}}
+.modal h2{font-family:var(--f-display);font-weight:900;font-size:1.5rem;margin:0 0 4px}
+.modal .sub{margin-bottom:20px}
+.x{position:absolute;top:14px;right:14px}
+
+/* WANTED poster */
+.poster{
+  width:min(400px,100%);padding:0;border-radius:6px;overflow:hidden;position:relative;
+  background:linear-gradient(170deg,#e8d5a9,#d7bf8e 45%,#c9ad77);
+  color:#2e2110;box-shadow:0 34px 70px -24px rgba(0,0,0,.95);
+  border:1px solid #8e6f3c;
+  animation:slam .45s cubic-bezier(.2,1.5,.4,1);
+}
+@keyframes slam{0%{opacity:0;transform:scale(1.4) rotate(6deg)}60%{transform:scale(.97) rotate(-1.5deg)}100%{opacity:1;transform:scale(1) rotate(-1deg)}}
+.poster::after{
+  content:'';position:absolute;inset:0;pointer-events:none;opacity:.3;
+  background:radial-gradient(circle at 18% 12%, rgba(120,88,40,.5), transparent 32%),
+             radial-gradient(circle at 86% 78%, rgba(120,88,40,.45), transparent 30%),
+             radial-gradient(circle at 50% 50%, transparent 55%, rgba(84,60,24,.5));
+}
+.p-in{padding:22px 24px 26px;text-align:center;position:relative;z-index:1}
+.p-wanted{font-family:var(--f-pirate);font-size:clamp(2.6rem,10vw,3.6rem);line-height:.86;letter-spacing:.06em;color:#3a2a12;margin:0}
+.p-rule{height:3px;background:#3a2a12;margin:9px 0 5px;opacity:.75}
+.p-dor{font-family:var(--f-serif);font-weight:600;letter-spacing:.38em;font-size:.68rem;text-transform:uppercase;margin:0 0 14px}
+.p-frame{border:3px solid #3a2a12;background:linear-gradient(180deg,#f0e2c0,#dcc79a);padding:16px;margin-bottom:13px}
+.p-name{font-family:var(--f-display);font-weight:900;font-size:clamp(1.15rem,4.6vw,1.6rem);letter-spacing:.02em;margin:11px 0 2px;text-transform:uppercase}
+.p-aff{font-family:var(--f-serif);font-style:italic;font-size:.88rem;opacity:.78;margin:0}
+.p-bounty{font-family:var(--f-display);font-weight:900;font-size:clamp(1.5rem,6.6vw,2.2rem);margin:6px 0 0;letter-spacing:.01em}
+.p-dead{font-family:var(--f-serif);letter-spacing:.3em;font-size:.6rem;text-transform:uppercase;margin:8px 0 0;opacity:.7}
+
+/* screen shake / red flash */
+.shake{animation:shk .5s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shk{10%,90%{transform:translate3d(-2px,0,0)}20%,80%{transform:translate3d(5px,0,0)}
+  30%,50%,70%{transform:translate3d(-9px,0,0)}40%,60%{transform:translate3d(9px,0,0)}}
+#flash{position:fixed;inset:0;z-index:250;pointer-events:none;opacity:0;background:radial-gradient(circle,rgba(195,69,63,.5),rgba(120,10,10,.85))}
+#flash.go{animation:fl .55s ease-out}
+@keyframes fl{0%{opacity:0}18%{opacity:1}100%{opacity:0}}
+
+/* confetti coins */
+#confetti{position:fixed;inset:0;z-index:240;pointer-events:none}
+
+/* loader */
+.spin{width:38px;height:38px;border-radius:50%;margin:34px auto;
+  border:3px solid rgba(224,179,74,.2);border-top-color:var(--gold-1);animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+footer{
+  padding:38px var(--page-x);text-align:center;border-top:1px solid rgba(224,179,74,.2);
+  color:#7d7161;font-size:.78rem;position:relative;z-index:2;
+}
+footer b{font-family:var(--f-pirate);color:var(--gold-1);font-size:1.02rem;letter-spacing:.04em}
+
+/* ============================================================
+   11. REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important}
+  #dust{display:none}
+  .ticket:hover{transform:none}
+}
+/* ---------- PHOTO BACKGROUND ---------- */
+#scene{
+  position:fixed;inset:0;z-index:0;pointer-events:none;will-change:transform;
+  background:
+    linear-gradient(180deg,rgba(20,8,10,.35) 0%,rgba(20,8,10,.62) 45%,rgba(12,8,14,.88) 100%),
+    url('/media/bg.jpg') center 30%/cover no-repeat;
+  transform:scale(1.08);
+}
+/* ---------- SAILING SHIP ---------- */
+#route{
+  position:fixed;top:0;right:calc(clamp(6px,2vw,26px) + 30px);height:0;
+  border-left:2px dashed rgba(243,217,139,.6);z-index:49;pointer-events:none;
+  filter:drop-shadow(0 0 4px rgba(224,179,74,.6));
+}
+#voyager{position:fixed;top:0;right:clamp(6px,2vw,26px);width:62px;z-index:50;pointer-events:none;will-change:transform}
+#voyager svg{display:block;width:100%;height:auto;overflow:visible;transform-origin:50% 40%;
+  animation:sway 5s ease-in-out infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.6))}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+#isle{position:absolute;right:calc(100% + 8px);top:38%;white-space:nowrap;padding:5px 12px;border-radius:8px;
+  background:linear-gradient(170deg,#e8d5a9,#cdb27b);color:#3a2a12;border:1px solid #8e6f3c;
+  box-shadow:0 8px 20px -8px rgba(0,0,0,.8);font-family:var(--f-pirate);font-size:.95rem;letter-spacing:.03em}
+#isle.pop{animation:isle .5s cubic-bezier(.2,1.4,.4,1)}
+@keyframes isle{from{opacity:.2;transform:translateX(14px) scale(.9)}to{opacity:1;transform:none}}
+@media(max-width:640px){#voyager{width:44px}#route{right:calc(clamp(6px,2vw,26px) + 21px)}#isle{display:none}}
+/* ---------- GRAND LINE RANKS ---------- */
+.ranks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.rank{padding:18px}
+.rank h3{font-family:var(--f-pirate);font-size:1.35rem;margin:10px 0 6px;color:var(--gold-2);letter-spacing:.03em}
+.rank p{margin:0;font-family:var(--f-serif);font-size:1rem;line-height:1.5;color:#cbb894}
+</style>
+</head>
+
+<body>
+<div id="scene" aria-hidden="true"></div>
+<div id="route" aria-hidden="true"></div>
+<div id="voyager" aria-hidden="true">
+  <div id="isle"><b>Foosha Village</b></div>
+  <svg viewBox="0 0 64 120">
+    <path d="M20 10 4 -34M44 10 60 -34" stroke="#fff" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M32 118C10 96 6 44 12 14Q32 4 52 14C58 44 54 96 32 118Z" fill="#2a1508" stroke="url(#gGold)" stroke-width="2.4"/>
+    <path d="M32 108C16 90 13 46 18 20Q32 12 46 20C51 46 48 90 32 108Z" fill="#8a5a2b"/>
+    <path d="M32 24v78" stroke="#5b3410" stroke-width="1.4"/>
+    <path d="M6 36Q32 50 58 36V44Q32 58 6 44Z" fill="#f4ead6"/>
+    <path d="M10 68Q32 80 54 68V75Q32 87 10 75Z" fill="#f4ead6"/>
+    <circle cx="32" cy="41" r="3" fill="#b2332c"/>
+    <circle cx="32" cy="72" r="3" fill="#5b3410"/>
+    <use href="#i-roger" x="33" y="0" width="16" height="16" style="color:#f4ead6"/>
+    <circle cx="32" cy="112" r="5" fill="url(#gGoldV)"/>
+  </svg>
+</div>
+<a class="skip" href="#main">Skip to the gangway</a>
+<canvas id="dust" aria-hidden="true"></canvas>
+<div id="flash" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<!-- ============ SVG SPRITE (all original, hand-built) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff4d2"/><stop offset=".45" stop-color="#e0b34a"/><stop offset="1" stop-color="#a5762a"/>
+    </linearGradient>
+    <linearGradient id="gGoldV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d98b"/><stop offset="1" stop-color="#a5762a"/>
+    </linearGradient>
+    <radialGradient id="gMoon"><stop offset="0" stop-color="#fff8e2"/><stop offset="1" stop-color="#e0b34a" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <!-- Jolly Roger -->
+  <symbol id="i-roger" viewBox="0 0 32 32">
+    <path d="M6 27 26 9M26 27 6 9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".55"/>
+    <path d="M16 3c-5.6 0-9.4 3.6-9.4 8.4 0 3 1.4 5.1 3.3 6.4v3.1c0 .9.8 1.6 1.7 1.6h8.8c.9 0 1.7-.7 1.7-1.6v-3.1c1.9-1.3 3.3-3.4 3.3-6.4C25.4 6.6 21.6 3 16 3Z" fill="currentColor"/>
+    <ellipse cx="12" cy="12" rx="2.5" ry="3" fill="#120608"/><ellipse cx="20" cy="12" rx="2.5" ry="3" fill="#120608"/>
+    <path d="M14.4 17.6h3.2l-1.6 3z" fill="#120608"/>
+  </symbol>
+
+  <!-- Straw hat -->
+  <symbol id="i-hat" viewBox="0 0 40 26">
+    <ellipse cx="20" cy="19" rx="19" ry="6.4" fill="url(#gGold)"/>
+    <path d="M9 18c0-6.6 4.9-12 11-12s11 5.4 11 12z" fill="#f3d98b"/>
+    <path d="M9 17.4c0-1 22-1 22 0 0 1.2-.2 1.9-.6 2.2H9.6c-.4-.3-.6-1-.6-2.2Z" fill="#b2332c"/>
+  </symbol>
+
+  <!-- Den Den Mushi -->
+  <symbol id="i-snail" viewBox="0 0 64 64">
+    <ellipse cx="32" cy="55" rx="23" ry="5" fill="#000" opacity=".28"/>
+    <path d="M10 52c-1-8 4-13 12-13h16c3 0 5 1.6 5 4.5S41 48 38 48H20c-2 0-3 1.4-3 3z" fill="#7bd6a4"/>
+    <circle cx="38" cy="32" r="18" fill="url(#gGoldV)" stroke="#8a5f1c" stroke-width="1.6"/>
+    <path d="M38 32a11 11 0 1 0 8 3.6" fill="none" stroke="#8a5f1c" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M38 32a5.5 5.5 0 1 0 4 1.8" fill="none" stroke="#8a5f1c" stroke-width="2.1" stroke-linecap="round"/>
+    <path d="M16 40V28M24 40V25" stroke="#7bd6a4" stroke-width="4.2" stroke-linecap="round"/>
+    <circle cx="16" cy="25" r="4.4" fill="#fff"/><circle cx="24" cy="22" r="4.4" fill="#fff"/>
+    <circle cx="16.6" cy="25" r="2" fill="#12201a"/><circle cx="24.6" cy="22" r="2" fill="#12201a"/>
+  </symbol>
+
+  <!-- Compass / Log Pose -->
+  <symbol id="i-pose" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="21" fill="#0c1820" stroke="url(#gGold)" stroke-width="2.2"/>
+    <circle cx="24" cy="24" r="16" fill="none" stroke="#e0b34a" stroke-width=".7" opacity=".45"/>
+    <g stroke="#e0b34a" stroke-width="1.5" stroke-linecap="round" opacity=".8">
+      <path d="M24 6v4M24 38v4M6 24h4M38 24h4"/>
+    </g>
+  </symbol>
+
+  <!-- Gold seal -->
+  <symbol id="i-seal" viewBox="0 0 48 48">
+    <g fill="url(#gGold)">
+      <path d="M24 1l4.6 4.1 6-1.5 2.6 5.7 6 2.1-.9 6.1 4.4 4.3-3.5 5.1 2 5.9-5.6 2.6-1 6.1-6.1.4-3.6 5-5.4-2.9-5.4 2.9-3.6-5-6.1-.4-1-6.1L1.8 32.8l2-5.9L.3 21.8l4.4-4.3-.9-6.1 6-2.1L12.4 3.6l6 1.5z"/>
+    </g>
+    <circle cx="24" cy="23" r="13" fill="#1a0a0c" opacity=".85"/>
+    <text x="24" y="29" font-family="Cinzel Decorative,serif" font-size="14" font-weight="900" text-anchor="middle" fill="#f3d98b">฿</text>
+  </symbol>
+
+  <!-- Marijoa crest -->
+  <symbol id="i-crest" viewBox="0 0 56 56">
+    <path d="M28 3l22 7v17c0 13-9.4 22.6-22 26C15.4 49.6 6 40 6 27V10z" fill="url(#gGoldV)" stroke="#8a5f1c" stroke-width="1.6"/>
+    <path d="M28 8l17 5.4V27c0 10.4-7.2 18.2-17 21.2C18.2 45.2 11 37.4 11 27V13.4z" fill="#fffdf6" opacity=".92"/>
+    <circle cx="28" cy="24" r="7" fill="none" stroke="#a5762a" stroke-width="2"/>
+    <path d="M28 14v20M18 24h20" stroke="#a5762a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M21 34c3 3.4 11 3.4 14 0" stroke="#a5762a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Coin -->
+  <symbol id="i-coin" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10.5" fill="url(#gGold)" stroke="#fff1cd"/>
+    <circle cx="12" cy="12" r="7.6" fill="none" stroke="#8a5f1c" stroke-width="1.1" opacity=".7"/>
+    <text x="12" y="16.4" font-size="9.5" font-weight="900" text-anchor="middle" fill="#5b3c0c" font-family="Inter,sans-serif">฿</text>
+  </symbol>
+
+  <!-- Sound -->
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M17 9.5l5 5M22 9.5l-5 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.2M20 5v6h-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></symbol>
+</svg>
+
+<!-- ============ TOP BAR ============ -->
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#main">
+      <svg width="40" height="26" aria-hidden="true"><use href="#i-hat"/></svg>
+      <span class="brand-txt">
+        <b class="goldtext">GRAN TESORO</b>
+        <span>Golden Gala &amp; Reverie Council</span>
+      </span>
+    </a>
+    <div class="bar-acts">
+      <button class="icon-btn" id="sndBtn" aria-pressed="false" title="Den Den Mushi sounds" aria-label="Toggle sound, currently off">
+        <svg width="19" height="19" aria-hidden="true"><use id="sndIc" href="#i-mute"/></svg>
+      </button>
+      <button class="icon-btn" id="reloadBtn" title="Recheck the log pose" aria-label="Refresh voyages">
+        <svg width="18" height="18" aria-hidden="true"><use href="#i-refresh"/></svg>
+      </button>
+      <button class="btn sm" id="newBtn"><svg width="14" height="14" aria-hidden="true"><use href="#i-plus"/></svg> Charter</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Entertainment City · Registry of the Chosen</p>
+      <h1>
+        <span class="goldtext">GRAN TESORO</span>
+        <span class="l2">Golden Gala &amp; Reverie Council</span>
+      </h1>
+      <p class="tagline">Somewhere between Sabaody and the New World floats a city of pure gold. Gild Tesoro keeps the guest list. Fill your seat before the Den Den Mushi rings for the next name on deck.</p>
+      <div class="hero-cta">
+        <button class="btn" id="heroBrowse">⚓ View the manifest</button>
+        <button class="btn ghost" id="heroNew">Charter a voyage</button>
+      </div>
+    </div>
+
+    <!-- Original SVG: Gran Tesoro ship over waves -->
+    <div class="ship-stage" aria-hidden="true">
+      <svg viewBox="0 0 460 420" preserveAspectRatio="xMidYMid meet">
+        <circle cx="352" cy="96" r="92" fill="url(#gMoon)" opacity=".55"/>
+        <circle cx="352" cy="96" r="30" fill="#fdf3d4" opacity=".92"/>
+        <g fill="#f3d98b">
+          <circle class="twinkle" cx="72" cy="58" r="1.9"/><circle class="twinkle" cx="140" cy="34" r="1.5"/>
+          <circle class="twinkle" cx="240" cy="66" r="2.1"/><circle class="twinkle" cx="420" cy="180" r="1.6"/>
+          <circle class="twinkle" cx="46" cy="140" r="1.7"/><circle class="twinkle" cx="300" cy="24" r="1.4"/>
+        </g>
+
+        <g class="bob">
+          <!-- towers -->
+          <rect x="196" y="96" width="24" height="112" fill="#2a1a08" stroke="url(#gGold)" stroke-width="1.6"/>
+          <rect x="240" y="126" width="20" height="82" fill="#2a1a08" stroke="url(#gGold)" stroke-width="1.4"/>
+          <rect x="166" y="140" width="18" height="68" fill="#2a1a08" stroke="url(#gGold)" stroke-width="1.2"/>
+          <!-- dome -->
+          <path d="M184 100a24 24 0 0 1 48 0z" fill="url(#gGoldV)"/>
+          <path d="M208 74v20" stroke="url(#gGold)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="208" cy="70" r="5" fill="#f3d98b"/>
+          <!-- windows -->
+          <g fill="#ffe9ad" opacity=".9">
+            <rect x="202" y="120" width="5" height="7" rx="1"/><rect x="211" y="120" width="5" height="7" rx="1"/>
+            <rect x="202" y="136" width="5" height="7" rx="1"/><rect x="211" y="136" width="5" height="7" rx="1"/>
+            <rect x="246" y="146" width="4" height="6" rx="1"/><rect x="252" y="146" width="4" height="6" rx="1"/>
+            <rect x="171" y="160" width="4" height="6" rx="1"/><rect x="178" y="160" width="4" height="6" rx="1"/>
+          </g>
+          <!-- masts + sails -->
+          <path d="M296 84v124M118 118v90" stroke="#3a2510" stroke-width="4" stroke-linecap="round"/>
+          <path d="M296 92c34 10 46 34 42 62-20-10-32-8-42-2z" fill="#f4ead6" opacity=".93"/>
+          <path d="M118 126c-26 8-34 26-31 46 15-8 24-6 31-2z" fill="#f4ead6" opacity=".88"/>
+          <!-- flag -->
+          <path d="M296 84l34 9-34 9z" fill="#b2332c"/>
+          <!-- hull -->
+          <path d="M84 208h292l-34 62c-6 11-18 18-31 18H149c-13 0-25-7-31-18z" fill="#1d1008" stroke="url(#gGold)" stroke-width="2.4"/>
+          <path d="M96 226h268l-6 13H102z" fill="url(#gGoldV)" opacity=".92"/>
+          <g fill="#ffe9ad" opacity=".85">
+            <circle cx="132" cy="256" r="4.6"/><circle cx="164" cy="256" r="4.6"/><circle cx="196" cy="256" r="4.6"/>
+            <circle cx="228" cy="256" r="4.6"/><circle cx="260" cy="256" r="4.6"/><circle cx="292" cy="256" r="4.6"/>
+            <circle cx="324" cy="256" r="4.6"/>
+          </g>
+          <!-- figurehead -->
+          <path d="M376 208l30-16-8 24z" fill="url(#gGoldV)"/>
+        </g>
+
+        <!-- waves -->
+        <path class="wave c" d="M-40 296c60-16 110 16 170 0s110-30 170-14 110 6 170-8v160H-40z" fill="#0c1a26" opacity=".95"/>
+        <path class="wave b" d="M-40 318c66-18 112 18 178 2s112-28 178-12 106 4 164-10v146H-40z" fill="#102434" opacity=".96"/>
+        <path class="wave"   d="M-40 344c70-20 120 20 190 4s120-26 190-10 100 2 160-12v138H-40z" fill="#16303f"/>
+        <g stroke="#e0b34a" stroke-width="2" opacity=".35" fill="none" stroke-linecap="round">
+          <path class="wave b" d="M40 352c14-8 26 8 40 0M300 366c14-8 26 8 40 0M170 380c14-8 26 8 40 0"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="bounty-strip" id="stats">
+      <div class="bstat"><div class="n goldtext" id="sVoy">—</div><div class="k">Voyages Chartered</div></div>
+      <div class="bstat"><div class="n goldtext" id="sSeat">—</div><div class="k">Gold Room Seats</div></div>
+      <div class="bstat"><div class="n goldtext" id="sGuest">—</div><div class="k">Invitations Issued</div></div>
+      <div class="bstat"><div class="n goldtext" id="sBounty">—</div><div class="k">Bounty on Deck (฿)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VOYAGE DECK ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">The Manifest</p>
+        <h2 class="h-sec goldtext">Tonight's Voyages</h2>
+        <p class="sub">Every ticket is a promise. Every seat is a fortune.</p>
+      </div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <select class="field" id="filter" aria-label="Filter voyages" style="width:auto;min-width:168px">
+          <option value="ALL">All voyages</option>
+          <option value="OPEN">Gangway open</option>
+          <option value="FULL">Gold Room full</option>
+          <option value="CLOSED">Drawbridge raised</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="deck" class="deck" aria-live="polite"><div class="spin" role="status" aria-label="Consulting the log pose"></div></div>
+    <div id="detail"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Who Sits Where</p>
+        <h2 class="h-sec goldtext">Ranks of the Grand Line</h2>
+        <p class="sub">Every guest sails under a standing. Each one gets a different table.</p>
+      </div>
+    </div>
+    <div class="ranks">
+      <div class="card rank"><span class="tier t-yonko">Yonko</span><h3>Emperors of the Sea</h3><p>One of the four rulers of the New World. Their table is always reserved.</p></div>
+      <div class="card rank"><span class="tier t-warlord">Warlord</span><h3>Shichibukai</h3><p>Pirates licensed by the World Government. Their seat comes with a treaty.</p></div>
+      <div class="card rank"><span class="tier t-captain">Supernova</span><h3>The Worst Generation</h3><p>Rookie captains with bounties over &#3647;100,000,000. Loud, fast, and hungry.</p></div>
+      <div class="card rank"><span class="tier t-crew">Marine</span><h3>Justice, Guest List Edition</h3><p>Admirals and vice admirals of Marine HQ. They check every name twice.</p></div>
+      <div class="card rank"><span class="tier t-warlord">Revolutionary</span><h3>Dragon's Army</h3><p>They arrive quietly and leave quietly. Nobody sees the seat move.</p></div>
+      <div class="card rank"><span class="tier t-noble">World Noble</span><h3>Celestial Dragons</h3><p>Always seated first. Never sent to the waitlist.</p></div>
+    </div>
+  </div>
+</section>
+<!-- ============ MARIJOA / COUNCIL PANEL ============ -->
+<section class="marijoa">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Mary Geoise · The Holy Land</p>
+        <h2 class="h-sec">The Reverie Council Chamber</h2>
+        <p class="sub">Fifty kingdoms. One table. Seats are granted, never bought.</p>
+      </div>
+      <svg width="56" height="56" aria-hidden="true"><use href="#i-crest"/></svg>
+    </div>
+    <div class="card" style="padding:clamp(18px,3vw,28px)">
+      <div class="grid2" style="gap:22px;align-items:center">
+        <div>
+          <h3 style="font-family:var(--f-display);font-weight:900;margin:0 0 8px;font-size:1.22rem">Charter a Council Session</h3>
+          <p style="font-family:var(--f-serif);font-size:1.02rem;line-height:1.6;margin:0 0 16px;color:#6d6048">
+            Council sessions follow the same law as the gala: a fixed number of chairs, a fair queue on deck,
+            and a Den Den Mushi that rings the moment a chair is abandoned.
+          </p>
+          <button class="btn" id="councilBtn">Convene a session</button>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:.9rem">
+          <li>⚖️ <b>Fair order.</b> First on deck, first to be called.</li>
+          <li>📞 <b>Timed offer.</b> A ringing snail with a countdown, then it passes on.</li>
+          <li>🪙 <b>No overbooking.</b> The chairs are counted in gold.</li>
+          <li>🛡️ <b>Full ledger.</b> Every boarding and every departure is logged.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <b>“Step into the golden city where only the chosen may enter.”</b><br>
+  <span style="opacity:.75">Gild Tesoro's Golden Entertainment Division · Registry of the Chosen · All art hand-built in SVG</span>
+</footer>
+
+<!-- ============ MODALS ============ -->
+<div class="veil" id="vEvent" role="dialog" aria-modal="true" aria-labelledby="evT">
+  <div class="card modal" style="position:relative">
+    <button class="icon-btn x" data-close aria-label="Close"><svg width="16" height="16"><use href="#i-x"/></svg></button>
+    <p class="eyebrow">Charter</p>
+    <h2 id="evT" class="goldtext">Raise a New Voyage</h2>
+    <p class="sub">Name her, count the chairs, and set her to sea.</p>
+    <form id="fEvent" style="display:flex;flex-direction:column;gap:14px;margin-top:20px">
+      <div><label for="e_name">Voyage name</label><input class="field" id="e_name" required placeholder="Gran Tesoro Golden Gala"></div>
+      <div><label for="e_desc">The invitation reads…</label><textarea class="field" id="e_desc" rows="2" required placeholder="An evening of gold, music and impossible fortune."></textarea></div>
+      <div class="grid2">
+        <div><label for="e_venue">Port of call</label><input class="field" id="e_venue" required placeholder="Gran Tesoro — Gold Room"></div>
+        <div><label for="e_cat">Charter type</label>
+          <select class="field" id="e_cat"><option>VIP Gala</option><option>Council Session</option><option>Banquet</option><option>Tournament</option></select></div>
+      </div>
+      <div class="grid2">
+        <div><label for="e_cap">Chairs in the Gold Room</label><input class="field" id="e_cap" type="number" min="1" max="500" value="4" required></div>
+        <div><label for="e_date">Departure</label><input class="field" id="e_date" required placeholder="2025-12-31 20:00"></div>
+      </div>
+      <button class="btn block" type="submit" style="margin-top:6px">🗝️ Set her to sea</button>
+    </form>
+  </div>
+</div>
+
+<div class="veil" id="vGuest" role="dialog" aria-modal="true" aria-labelledby="gT">
+  <div class="card modal" style="position:relative">
+    <button class="icon-btn x" data-close aria-label="Close"><svg width="16" height="16"><use href="#i-x"/></svg></button>
+    <p class="eyebrow">Golden Invitation</p>
+    <h2 id="gT" class="goldtext">Issue an Invitation</h2>
+    <p class="sub" id="gSub">A seat in the Gold Room, or a place on deck.</p>
+    <form id="fGuest" style="display:flex;flex-direction:column;gap:14px;margin-top:20px">
+      <div><label for="g_name">Name on the poster</label><input class="field" id="g_name" required placeholder="Monkey D. Luffy"></div>
+      <div><label for="g_mail">Den Den Mushi address</label><input class="field" id="g_mail" type="email" required placeholder="luffy@strawhat.sea"></div>
+      <div class="grid2">
+        <div><label for="g_aff">Crew or allegiance</label>
+          <select class="field" id="g_aff">
+            <option>Straw Hat Pirates</option><option>Heart Pirates</option><option>Red Hair Pirates</option>
+            <option>Kuja Pirates</option><option>Revolutionary Army</option><option>Marine Headquarters</option>
+            <option>World Nobles</option><option>Independent</option>
+          </select></div>
+        <div><label for="g_tier">Standing</label>
+          <select class="field" id="g_tier"><option>Crew</option><option>Captain</option><option>Warlord</option><option>Yonko</option><option>Noble</option></select></div>
+      </div>
+      <button class="btn block" type="submit" style="margin-top:6px">✉️ Send the golden invitation</button>
+    </form>
+  </div>
+</div>
+
+<div class="veil" id="vPoster" role="dialog" aria-modal="true" aria-label="Wanted poster">
+  <div class="poster" id="poster">
+    <div class="p-in">
+      <p class="p-wanted">WANTED</p>
+      <div class="p-rule"></div>
+      <p class="p-dor">Dead or Alive</p>
+      <div class="p-frame">
+        <svg width="74" height="74" style="color:#3a2a12" aria-hidden="true"><use href="#i-roger"/></svg>
+        <p class="p-name" id="poName">—</p>
+        <p class="p-aff" id="poAff">—</p>
+      </div>
+      <p class="p-bounty" id="poBounty">฿ 0</p>
+      <p class="p-dead" id="poStatus">Gold Room Guest</p>
+      <button class="btn sm" data-close style="margin-top:16px">Pin it to the mast</button>
+    </div>
+  </div>
+</div>
+
+<div id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+<script>
+/* ==================================================================
+   ██  API CONFIG — EDIT ONLY THIS BLOCK TO MATCH YOUR FLASK ROUTES  ██
+   ================================================================== */
+const API = {
+  BASE: '',                    // e.g. 'http://127.0.0.1:5000'
+  MOCK_WHEN_OFFLINE: false,     // set false in production
+
+  url: {
+    listEvents:   ()    => `/api/events`,
+    createEvent:  ()    => `/api/events`,
+    getEvent:     (id)  => `/api/events/${id}`,
+    summary:      (id)  => `/api/events/${id}/summary`,
+    closeEvent:   (id)  => `/api/events/${id}/close`,
+    register:     (id)  => `/api/events/${id}/register`,
+    cancelSeat:   (id)  => `/api/events/${id}/cancel-registration`,
+    waitlist:     (id)  => `/api/events/${id}/waitlist`,
+    acceptOffer:  (oid) => `/api/offers/${oid}/accept`,
+    declineOffer: (oid) => `/api/offers/${oid}/decline`,
+  },
+
+  method: {
+    listEvents:'GET', createEvent:'POST', getEvent:'GET', summary:'GET',
+    closeEvent:'POST', register:'POST', cancelSeat:'POST', waitlist:'GET',
+    acceptOffer:'POST', declineOffer:'POST'
+  },
+
+  // Outgoing payload shapes
+  body: {
+    createEvent: f => ({ name:f.name, description:f.description, venue:f.venue,
+                         capacity:f.capacity, event_date:f.event_date, category:f.category }),
+    register:    f => ({ name:f.name, email:f.email, affiliation:f.affiliation, auto_waitlist:true }),
+    cancelSeat:  f => ({ email:f.email }),
+  },
+
+  // Incoming response readers — adjust if your JSON keys differ
+  read: {
+    events:    r => r.events ?? r.data ?? (Array.isArray(r) ? r : []),
+    event:     r => r.event ?? r,
+    confirmed: r => r.confirmed_guests ?? r.confirmed ?? r.registrations ?? [],
+    waitlist:  r => r.waitlist_guests ?? r.waitlist ?? [],
+    offers:    r => r.pending_offers ?? r.offers ?? (r.active_offer ? [r.active_offer] : []),
+    message:   r => r.message ?? r.error ?? '',
+    ok:        (r, res) => (r && r.success !== undefined) ? !!r.success : res.ok,
+  }
+};
+/* ================= END API CONFIG ================= */
+
+
+/* ---------- tiny helpers ---------- */
+const $  = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+async function call(key, id, payload){
+  const method = API.method[key] || 'GET';
+  const url = API.BASE + API.url[key](id);
+  const opt = { method, headers:{'Content-Type':'application/json'} };
+  if (payload && method !== 'GET') opt.body = JSON.stringify(payload);
+  const res  = await fetch(url, opt);
+  let data = {}; try { data = await res.json(); } catch(_){}
+  return { ok: API.read.ok(data,res), data, status:res.status };
+}
+
+/* ---------- state ---------- */
+const S = { events:[], active:null, detail:null, offerTimer:null, sound:false, filter:'ALL', mock:false };
+
+/* ---------- sound (tiny WebAudio blips, off by default) ---------- */
+let AC=null;
+function blip(freq=760, dur=.09, type='sine', vol=.06){
+  if(!S.sound) return;
+  try{
+    AC = AC || new (window.AudioContext||window.webkitAudioContext)();
+    const o=AC.createOscillator(), g=AC.createGain();
+    o.type=type; o.frequency.value=freq;
+    g.gain.setValueAtTime(vol,AC.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0001, AC.currentTime+dur);
+    o.connect(g); g.connect(AC.destination); o.start(); o.stop(AC.currentTime+dur);
+  }catch(_){}
+}
+const sfx = {
+  ring(){ [0,.16,.32].forEach((d,i)=>setTimeout(()=>blip(i%2?900:720,.11,'triangle',.05), d*1000)); },
+  coin(){ blip(1180,.07,'square',.045); setTimeout(()=>blip(1560,.1,'square',.035),70); },
+  thud(){ blip(150,.2,'sawtooth',.05); },
+  tick(){ blip(640,.04,'sine',.03); }
+};
+
+/* ---------- toasts (Den Mushi transmissions) ---------- */
+function toast(title, msg, kind=''){
+  const el = document.createElement('div');
+  el.className = 'toast ' + kind;
+  el.setAttribute('role', kind==='err' ? 'alert' : 'status');
+  const ic = kind==='err' ? 'i-roger' : 'i-snail';
+  el.innerHTML = `<svg class="toast-ic" aria-hidden="true"><use href="#${ic}"/></svg>
+                  <div><b>${esc(title)}</b><span>${esc(msg)}</span></div>`;
+  $('#toasts').appendChild(el);
+  setTimeout(()=>{ el.classList.add('out'); setTimeout(()=>el.remove(),260); }, 4600);
+}
+
+/* ---------- gold coin confetti ---------- */
+const cvs = $('#confetti'), cx = cvs.getContext('2d');
+let coins=[], raf=null;
+function sizeCanvas(){ [cvs,$('#dust')].forEach(c=>{ c.width=innerWidth; c.height=innerHeight; }); }
+sizeCanvas(); addEventListener('resize', sizeCanvas);
+
+function rain(n=52){
+  if(RM) return;
+  for(let i=0;i<n;i++) coins.push({
+    x:Math.random()*innerWidth, y:-30-Math.random()*220,
+    r:6+Math.random()*9, vy:3+Math.random()*4.5, vx:(Math.random()-.5)*2.6,
+    a:Math.random()*6.3, va:(Math.random()-.5)*.25, life:1
+  });
+  if(!raf) raf = requestAnimationFrame(drawCoins);
+}
+function drawCoins(){
+  cx.clearRect(0,0,cvs.width,cvs.height);
+  coins = coins.filter(c=>c.y < innerHeight+60 && c.life>0);
+  coins.forEach(c=>{
+    c.x+=c.vx; c.y+=c.vy; c.a+=c.va; c.vy+=.06;
+    const w = Math.abs(Math.cos(c.a))*c.r + 1.5;
+    cx.save(); cx.translate(c.x,c.y);
+    const g = cx.createLinearGradient(-w,-c.r,w,c.r);
+    g.addColorStop(0,'#fff4d2'); g.addColorStop(.5,'#e0b34a'); g.addColorStop(1,'#a5762a');
+    cx.fillStyle=g; cx.beginPath(); cx.ellipse(0,0,w,c.r,0,0,7); cx.fill();
+    cx.strokeStyle='rgba(255,241,205,.85)'; cx.lineWidth=1; cx.stroke();
+    cx.restore();
+  });
+  raf = coins.length ? requestAnimationFrame(drawCoins) : (cx.clearRect(0,0,cvs.width,cvs.height), null);
+}
+
+/* ---------- gold dust drift ---------- */
+(function dust(){
+  if(RM) return;
+  const c=$('#dust'), g=c.getContext('2d');
+  const N = innerWidth<600 ? 34 : 70;
+  const P = Array.from({length:N},()=>({
+    x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+    r:.5+Math.random()*1.7, s:.08+Math.random()*.34,
+    d:Math.random()*6.3, o:.15+Math.random()*.5
+  }));
+  (function loop(){
+    g.clearRect(0,0,c.width,c.height);
+    P.forEach(p=>{
+      p.y -= p.s; p.x += Math.sin(p.d+=.006)*.35;
+      if(p.y<-10){ p.y=innerHeight+10; p.x=Math.random()*innerWidth; }
+      g.beginPath(); g.arc(p.x,p.y,p.r,0,7);
+      g.fillStyle=`rgba(243,217,139,${p.o})`; g.fill();
+    });
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ---------- screen shake + red flash ---------- */
+function alarm(){
+  if(!RM){ document.body.classList.add('shake'); setTimeout(()=>document.body.classList.remove('shake'),520); }
+  const f=$('#flash'); f.classList.remove('go'); void f.offsetWidth; f.classList.add('go');
+  sfx.thud();
+}
+
+/* ---------- normalisers (handles several backend shapes) ---------- */
+const num = v => Number(v ?? 0) || 0;
+function normEvent(e){
+  const ev = e.event ?? e;
+  const st = e.stats ?? ev.stats ?? {};
+  const cap = num(ev.capacity ?? st.capacity);
+  const conf = num(st.confirmed_registrations ?? st.confirmed_count ?? ev.confirmed ?? 0);
+  const wl = num(st.waitlist_count ?? ev.waitlist_count ?? 0);
+  return {
+    id: ev.id ?? ev.event_id,
+    name: ev.name ?? 'Unnamed voyage',
+    desc: ev.description ?? ev.tagline ?? '',
+    venue: ev.venue ?? '—',
+    date: ev.event_date ?? ev.date ?? 'TBA',
+    category: ev.category ?? 'VIP Gala',
+    status: (ev.status ?? 'OPEN').toUpperCase(),
+    capacity: cap, confirmed: conf, waiting: wl,
+    free: Math.max(0, cap - conf),
+    council: /council|reverie|marijoa|mary geoise/i.test(`${ev.name} ${ev.category} ${ev.venue}`)
+  };
+}
+function normGuest(g){
+  const p = g.participant ?? g;
+  const r = g.registration ?? g;
+  return {
+    id: r.id ?? p.id,
+    pid: p.id ?? r.participant_id,
+    name: p.name ?? 'Unknown',
+    email: p.email ?? '',
+    aff: p.affiliation ?? 'Independent',
+    seat: r.registration_number ?? r.seat_number ?? '—',
+    tier: r.vip_tier ?? p.tier ?? 'Crew'
+  };
+}
+function normWait(w){
+  const p = w.participant ?? w;
+  const e = w.waitlist_entry ?? w;
+  return { id:e.id, pid:p.id ?? e.participant_id, name:p.name??'Unknown', email:p.email??'',
+           aff:p.affiliation??'Independent', pos:num(e.position)||1, rank:e.rank_title ?? '' };
+}
+function normOffer(o){
+  const of = o.offer ?? o;
+  const p  = o.participant ?? {};
+  let secs = num(of.time_remaining_seconds ?? o.time_left);
+  if(!secs && of.expires_at){
+    secs = Math.max(0, Math.round((new Date(of.expires_at) - new Date())/1000));
+  }
+  return { id:of.id, name:p.name ?? of.name ?? 'the next on deck', secs: secs || 60, status: of.status ?? 'PENDING' };
+}
+
+/* ---------- tier + bounty flavour ---------- */
+function tierClass(t=''){
+  const s = t.toLowerCase();
+  if(s.includes('yonko')||s.includes('celestial')) return ['t-yonko','Yonko'];
+  if(s.includes('warlord')||s.includes('admiral')) return ['t-warlord','Warlord'];
+  if(s.includes('noble')) return ['t-noble','Noble'];
+  if(s.includes('captain')) return ['t-captain','Captain'];
+  return ['t-crew','Crew'];
+}
+function bounty(seed){
+  let h=0; for(const ch of String(seed)) h=(h*31+ch.charCodeAt(0))>>>0;
+  const v = 30_000_000 + (h % 2_970_000_000);
+  return Math.round(v/1_000_000)*1_000_000;
+}
+const fmt = n => n.toLocaleString('en-US');
+
+/* ---------- MOCK fallback so the UI is never blank ---------- */
+function mockData(){
+  S.mock = true;
+  const mk=(id,name,venue,cap,cat,date)=>({id,name,venue,capacity:cap,category:cat,event_date:date,status:'OPEN',
+      description:'An evening of gold, music and impossible fortune.'});
+  return [
+    {event:mk('GT-EVT-DEMO1','Gran Tesoro Golden Gala','Gran Tesoro — Gold Room',4,'VIP Gala','2025-12-31 20:00'),
+     stats:{confirmed_registrations:4,waitlist_count:2}},
+    {event:mk('GT-EVT-DEMO2','Reverie Council Session','Mary Geoise — Pangaea Castle',6,'Council Session','2026-07-14 10:00'),
+     stats:{confirmed_registrations:3,waitlist_count:0}},
+    {event:mk('GT-EVT-DEMO3','Baratie All-Blue Banquet','Baratie — East Blue',3,'Banquet','2025-08-20 19:00'),
+     stats:{confirmed_registrations:3,waitlist_count:1}}
+  ];
+}
+
+/* ---------- RENDER: deck of tickets ---------- */
+function coinRow(conf, cap){
+  if(cap > 14){
+    const pct = cap ? Math.min(100, conf/cap*100) : 0;
+    return `<div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>`;
+  }
+  let h='<div class="coins" role="img" aria-label="'+conf+' of '+cap+' seats filled">';
+  for(let i=0;i<cap;i++) h += `<span class="coin${i<conf?'':' empty'}"></span>`;
+  return h+'</div>';
+}
+function statusChip(e){
+  if(e.status==='CLOSED'||e.status==='CANCELLED') return '<span class="chip closed">Drawbridge raised</span>';
+  if(e.free<=0) return '<span class="chip full">Gold Room full</span>';
+  return `<span class="chip open">${e.free} seat${e.free>1?'s':''} left</span>`;
+}
+function renderDeck(){
+  const box = $('#deck');
+  let list = S.events;
+  if(S.filter!=='ALL'){
+    list = list.filter(e => S.filter==='OPEN' ? (e.free>0 && e.status==='OPEN')
+                      : S.filter==='FULL' ? e.free<=0
+                      : ['CLOSED','CANCELLED'].includes(e.status));
+  }
+  if(!list.length){
+    box.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <svg width="54" height="54" style="color:#7d6a45" aria-hidden="true"><use href="#i-roger"/></svg>
+      <p>No treasure on this ship yet. Issue the first invitation.</p>
+      <button class="btn sm" style="margin-top:16px" onclick="openModal('#vEvent')">Charter a voyage</button>
+    </div>`;
+    return;
+  }
+  box.innerHTML = list.map(e=>`
+    <article class="ticket${e.council?' council':''}" tabindex="0" role="button"
+             aria-label="Open ${esc(e.name)}" data-id="${esc(e.id)}">
+      <svg class="seal" aria-hidden="true"><use href="#i-seal"/></svg>
+      <div class="t-top">
+        <div class="t-flag">${statusChip(e)}<span class="chip">${esc(e.category)}</span></div>
+        <h3 class="t-name">${esc(e.name)}</h3>
+        <p class="t-venue">${esc(e.venue)}</p>
+        <div class="t-meta"><span>🕯 ${esc(e.date)}</span><span>⚓ ${e.waiting} on deck</span></div>
+      </div>
+      <div class="stamp${e.free>0?' gold':''}">${e.free>0?'GOLD ROOM ACCESS':'MANIFEST SEALED'}</div>
+      <div class="perf"></div>
+      <div class="t-bot">
+        ${coinRow(e.confirmed,e.capacity)}
+        <div class="t-nums"><span>${e.confirmed} / ${e.capacity} boarded</span><span>${e.free} free</span></div>
+        <button class="btn sm ghost" style="align-self:flex-start">Open the manifest →</button>
+      </div>
+    </article>`).join('');
+
+  $$('.ticket',box).forEach(t=>{
+    const go = ()=>selectEvent(t.dataset.id);
+    t.addEventListener('click', go);
+    t.addEventListener('keydown', ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); go(); }});
+  });
+}
+
+/* ---------- RENDER: stats ---------- */
+function renderStats(){
+  const v=S.events.length;
+  const seats=S.events.reduce((a,e)=>a+e.capacity,0);
+  const guests=S.events.reduce((a,e)=>a+e.confirmed,0);
+  const b=S.events.reduce((a,e)=>a+e.confirmed*137_000_000,0);
+  $('#sVoy').textContent=v; $('#sSeat').textContent=seats; $('#sGuest').textContent=guests;
+  $('#sBounty').textContent = b>=1e9 ? (b/1e9).toFixed(1)+'B' : (b/1e6).toFixed(0)+'M';
+}
+
+/* ---------- RENDER: detail panel ---------- */
+function renderDetail(){
+  const box=$('#detail'); const d=S.detail;
+  if(!d){ box.innerHTML=''; return; }
+  const e=d.event, council=e.council;
+
+  const guests = d.confirmed.length ? d.confirmed.map(g=>{
+    const [cls,label]=tierClass(g.tier);
+    return `<div class="guest">
+      <div class="g-av">${esc((g.name.match(/\b\w/g)||['?']).slice(0,2).join(''))}</div>
+      <div class="g-main">
+        <div class="g-name">${esc(g.name)}</div>
+        <div class="g-sub"><span class="tier ${cls}">${label}</span><span>Seat ${esc(g.seat)}</span><span>${esc(g.aff)}</span></div>
+      </div>
+      <div class="g-act">
+        <button class="btn sm ghost" data-poster="${esc(g.pid||g.id)}">Poster</button>
+        <button class="btn sm danger" data-abandon="${esc(g.email)}">Abandon ship</button>
+      </div></div>`;
+  }).join('') : `<div class="empty">
+      <svg width="46" height="46" style="color:#7d6a45" aria-hidden="true"><use href="#i-hat"/></svg>
+      <p>No treasure on this ship yet. Issue the first invitation.</p></div>`;
+
+  const queue = d.waitlist.length ? d.waitlist.map(w=>`
+    <div class="pose">
+      <svg class="pose-dial" aria-hidden="true" viewBox="0 0 48 48">
+        <use href="#i-pose"/>
+        <g transform="rotate(${(w.pos*47)%360} 24 24)">
+          <path d="M24 10l3.4 12L24 26l-3.4-4z" fill="#c3453f"/>
+          <path d="M24 38l-3.4-12L24 22l3.4 4z" fill="#f3d98b"/>
+        </g>
+        <circle cx="24" cy="24" r="2.6" fill="#0c1820" stroke="#e0b34a"/>
+      </svg>
+      <div class="g-main">
+        <div class="g-name">${esc(w.name)}</div>
+        <div class="g-sub"><span class="chip">#${w.pos} on deck</span><span>${esc(w.rank||w.aff)}</span></div>
+      </div>
+    </div>`).join('') : `<div class="empty"><p>The deck is clear. Nobody waiting for a chair.</p></div>`;
+
+  const offer = d.offers.find(o=>o.status==='PENDING');
+
+  box.innerHTML = `
+  <div class="card panel">
+    <div class="panel-head">
+      <div>
+        <p class="eyebrow">${council?'Council Session':'Voyage'} · ${esc(e.id)}</p>
+        <h3 class="h-sec goldtext" style="margin-top:.1em">${esc(e.name)}</h3>
+        <p class="sub">${esc(e.venue)} · ${esc(e.date)}</p>
+      </div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center">
+        ${statusChip(e)}
+        <button class="btn sm" id="dInvite" ${e.status!=='OPEN'&&e.free<=0&&!e.waiting?'':''}>✉️ Issue invitation</button>
+        <button class="btn sm ghost" id="dClose">⛓ Raise the drawbridge</button>
+      </div>
+    </div>
+
+    ${offer ? `
+    <div class="offer" id="offerBox" role="alert">
+      <div class="offer-in">
+        <div class="offer-l">
+          <svg class="snail" aria-hidden="true"><use href="#i-snail"/></svg>
+          <div>
+            <h3>Golden Den Den Mushi is calling…</h3>
+            <p>A chair opened. <b style="color:#d9f5e6">${esc(offer.name)}</b> has first claim — then it passes on.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <div class="ticker" id="tick">--</div>
+          <button class="btn sm ghost" id="oDecline">Decline</button>
+          <button class="btn sm" id="oAccept">Accept the seat</button>
+        </div>
+      </div>
+    </div>` : ''}
+
+    <div class="panel-cols">
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">Gold Room guests · ${d.confirmed.length}/${e.capacity}</p>
+        <div class="roster">${guests}</div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">Waiting on deck · ${d.waitlist.length}</p>
+        <div class="roster">${queue}</div>
+      </div>
+    </div>
+  </div>`;
+
+  $('#dInvite').onclick = ()=>{ $('#gSub').textContent = `For “${e.name}” — ${e.free>0? e.free+' chair(s) still gold' : 'the room is full, they will wait on deck'}.`; openModal('#vGuest'); };
+  $('#dClose').onclick  = raiseDrawbridge;
+  $$('[data-abandon]',box).forEach(b=> b.onclick = ()=>abandonShip(b.dataset.abandon));
+  $$('[data-poster]',box).forEach(b=> b.onclick = ()=>{
+    const g = d.confirmed.find(x=>String(x.pid||x.id)===b.dataset.poster);
+    if(g) showPoster(g.name, g.aff, 'Gold Room Guest');
+  });
+
+  if(offer) startTicker(offer);
+  box.scrollIntoView({behavior: RM?'auto':'smooth', block:'nearest'});
+}
+
+/* ---------- offer countdown ---------- */
+function startTicker(offer){
+  clearInterval(S.offerTimer);
+  let t = offer.secs;
+  sfx.ring();
+  const el = $('#tick'); if(!el) return;
+  const paint = ()=>{
+    const m=String(Math.floor(t/60)).padStart(2,'0'), s=String(t%60).padStart(2,'0');
+    el.textContent = `${m}:${s}`;
+    el.classList.toggle('warn', t<=15);
+    if(t<=10 && t>0) sfx.tick();
+  };
+  paint();
+  S.offerTimer = setInterval(()=>{
+    t--; if(t<0){ clearInterval(S.offerTimer); toast('Transmission lost','The snail went quiet. The seat passes to the next on deck.','err'); refreshDetail(); return; }
+    paint();
+  },1000);
+}
+
+/* ---------- ACTIONS ---------- */
+async function loadEvents(){
+  $('#deck').innerHTML = '<div class="spin" role="status" aria-label="Consulting the log pose"></div>';
+  let raw;
+  try{
+    const r = await call('listEvents');
+    if(!r.ok) throw new Error(API.read.message(r.data) || 'Fetch failed');
+    raw = API.read.events(r.data);
+    S.mock = false;
+  }catch(err){
+    if(!API.MOCK_WHEN_OFFLINE){ toast('Signal lost', err.message, 'err'); $('#deck').innerHTML=''; return; }
+    raw = mockData();
+    toast('Sailing on memory', 'Backend unreachable — showing a demo manifest.', 'err');
+  }
+  S.events = raw.map(normEvent).filter(e=>e.id);
+  renderStats(); renderDeck();
+  if(S.active && !S.events.some(e=>e.id===S.active)){ S.active=null; S.detail=null; renderDetail(); }
+}
+
+async function selectEvent(id){
+  S.active = id;
+  clearInterval(S.offerTimer);
+  const base = S.events.find(e=>e.id===id);
+  try{
+    const r = await call('summary', id);
+    if(!r.ok) throw 0;
+    const d = r.data;
+    S.detail = {
+      event: normEvent(d.event ? d : {event:base}),
+      confirmed: API.read.confirmed(d).map(normGuest),
+      waitlist:  API.read.waitlist(d).map(normWait).sort((a,b)=>a.pos-b.pos),
+      offers:    API.read.offers(d).map(normOffer)
+    };
+  }catch(_){
+    S.detail = { event: base, confirmed:[], waitlist:[], offers:[] };
+    if(!S.mock) toast('Partial manifest','Could not read the full summary; showing what we have.','err');
+  }
+  renderDetail();
+}
+const refreshDetail = async ()=>{ await loadEvents(); if(S.active) await selectEvent(S.active); };
+
+async function createEvent(f){
+  const r = await call('createEvent', null, API.body.createEvent(f));
+  if(r.ok){ closeModal(); toast('She sails','“'+f.name+'” is on the manifest.','ok'); rain(28); sfx.coin(); await loadEvents(); }
+  else toast('Charter refused', API.read.message(r.data)||'The harbourmaster said no.', 'err');
+}
+
+async function registerGuest(f){
+  const r = await call('register', S.active, API.body.register(f));
+  const msg = API.read.message(r.data);
+  if(r.ok){
+    closeModal();
+    const waited = /wait/i.test(msg) || r.data.type==='WAITLISTED';
+    showPoster(f.name, f.affiliation, waited ? 'Waiting on Deck' : 'Gold Room Guest');
+    if(!waited){ rain(64); sfx.coin(); toast('Invitation accepted', f.name+' walks the gold-leaf deck.','ok'); }
+    else toast('Room is full', f.name+' waits on deck. The snail will call.','');
+    await refreshDetail();
+  } else toast('Invitation refused', msg||'That guest cannot board.', 'err');
+}
+
+async function abandonShip(email){
+  if(!confirm('Abandon ship? This frees the chair and rings the Den Den Mushi for the next on deck.')) return;
+  const r = await call('cancelSeat', S.active, API.body.cancelSeat({email}));
+  if(r.ok){ alarm(); toast('A guest walked the plank','The chair is free. The snail is ringing.',''); await refreshDetail(); }
+  else toast('Cannot release', API.read.message(r.data)||'That seat is already gone.', 'err');
+}
+
+async function raiseDrawbridge(){
+  if(!confirm('Raise the drawbridge? No further invitations can be issued.')) return;
+  const r = await call('closeEvent', S.active);
+  if(r.ok){ alarm(); toast('Drawbridge raised','The manifest is sealed.',''); await refreshDetail(); }
+  else toast('Stuck chain', API.read.message(r.data)||'Could not close the voyage.', 'err');
+}
+
+async function answerOffer(accept){
+  const o = S.detail?.offers.find(x=>x.status==='PENDING'); if(!o) return;
+  clearInterval(S.offerTimer);
+  const r = await call(accept?'acceptOffer':'declineOffer', o.id);
+  if(r.ok){
+    if(accept){ rain(80); sfx.coin(); toast('Seat claimed','Welcome to the Gold Room.','ok'); }
+    else toast('Passed along','The invitation moves to the next on deck.','');
+  } else toast('Snail hung up', API.read.message(r.data)||'That offer is no longer live.','err');
+  await refreshDetail();
+}
+
+/* ---------- wanted poster ---------- */
+function showPoster(name, aff, status){
+  $('#poName').textContent   = name;
+  $('#poAff').textContent    = aff || 'Independent';
+  $('#poBounty').textContent = '฿ ' + fmt(bounty(name+aff));
+  $('#poStatus').textContent = status;
+  openModal('#vPoster');
+  sfx.coin();
+}
+
+/* ---------- modals ---------- */
+let lastFocus=null;
+function openModal(sel){
+  lastFocus = document.activeElement;
+  const v=$(sel); v.classList.add('on');
+  const f=v.querySelector('input,select,textarea,button'); f&&f.focus();
+}
+function closeModal(){
+  $$('.veil.on').forEach(v=>v.classList.remove('on'));
+  lastFocus && lastFocus.focus();
+}
+$$('.veil').forEach(v=>{
+  v.addEventListener('click', e=>{ if(e.target===v) closeModal(); });
+  $$('[data-close]',v).forEach(b=>b.onclick=closeModal);
+});
+addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+
+/* ---------- wiring ---------- */
+$('#newBtn').onclick = $('#heroNew').onclick = ()=>{ $('#e_cat').value='VIP Gala'; openModal('#vEvent'); };
+$('#councilBtn').onclick = ()=>{
+  $('#e_cat').value='Council Session'; $('#e_venue').value='Mary Geoise — Pangaea Castle';
+  $('#e_name').value='Reverie Council Session'; openModal('#vEvent');
+};
+$('#heroBrowse').onclick = ()=> $('#deck').scrollIntoView({behavior:RM?'auto':'smooth'});
+$('#reloadBtn').onclick = ()=>{ loadEvents(); toast('Log pose reset','Manifest reloaded from the harbour.',''); };
+$('#filter').onchange = e=>{ S.filter=e.target.value; renderDeck(); };
+
+$('#sndBtn').onclick = e=>{
+  S.sound = !S.sound;
+  e.currentTarget.setAttribute('aria-pressed', S.sound);
+  e.currentTarget.setAttribute('aria-label', 'Toggle sound, currently ' + (S.sound?'on':'off'));
+  $('#sndIc').setAttribute('href', S.sound ? '#i-sound' : '#i-mute');
+  if(S.sound) sfx.ring();
+};
+
+$('#fEvent').onsubmit = e=>{ e.preventDefault(); createEvent({
+  name:$('#e_name').value.trim(), description:$('#e_desc').value.trim(), venue:$('#e_venue').value.trim(),
+  capacity:parseInt($('#e_cap').value,10), event_date:$('#e_date').value.trim(), category:$('#e_cat').value });
+};
+$('#fGuest').onsubmit = e=>{ e.preventDefault(); registerGuest({
+  name:$('#g_name').value.trim(), email:$('#g_mail').value.trim().toLowerCase(),
+  affiliation:$('#g_aff').value, tier:$('#g_tier').value });
+};
+
+document.addEventListener('click', e=>{
+  if(e.target.closest('#oAccept'))  answerOffer(true);
+  if(e.target.closest('#oDecline')) answerOffer(false);
+});
+
+/* ---------- SHIP SAILS DOWN AS YOU SCROLL ---------- */
+(function voyage(){
+  const ship=$('#voyager'), route=$('#route'), isle=$('#isle'), label=$('#isle b'), scene=$('#scene');
+  const stops=[[0,'Foosha Village'],[.10,'Loguetown'],[.20,'Reverse Mountain'],[.32,'Water 7'],
+    [.44,'Sabaody Archipelago'],[.56,'Marineford'],[.68,'Fish-Man Island'],[.80,'Wano Country'],
+    [.93,'Laugh Tale \u2715']];
+  let queued=false, last='';
+  function update(){
+    queued=false;
+    const max=document.documentElement.scrollHeight-innerHeight;
+    const p=max>0 ? Math.min(1,Math.max(0,scrollY/max)) : 0;
+    const top=68, bottom=innerHeight-ship.offsetHeight-16;
+    const y=top+p*Math.max(0,bottom-top);
+    ship.style.transform='translateY('+y+'px)';
+    route.style.height=(y+8)+'px';
+    if(!RM) scene.style.transform='translate3d(0,'+(-p*46)+'px,0) scale(1.08)';
+    let name=stops[0][1]; stops.forEach(s=>{ if(p>=s[0]) name=s[1]; });
+    if(name!==last){ last=name; label.textContent=name; isle.classList.remove('pop'); void isle.offsetWidth; isle.classList.add('pop'); }
+  }
+  const req=()=>{ if(!queued){ queued=true; requestAnimationFrame(update); } };
+  addEventListener('scroll',req,{passive:true});
+  addEventListener('resize',req);
+  update();
+})();
+/* ---------- go ---------- */
+loadEvents();
+setInterval(()=>{ if(S.active && !document.hidden) selectEvent(S.active); }, 12000);
+</script>
+</body>
+</html>
